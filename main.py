@@ -4,6 +4,7 @@ from flask_compress import Compress
 from flask import Flask, current_app, jsonify
 from flask_cors import CORS
 
+from controller.terra_controller import terra_controller
 from controller.data_controller import data_controller
 from util.custom_json_encoder import CustomJSONEncoder
 
@@ -17,6 +18,7 @@ CORS(application)
 application.config.from_object(os.environ['APP_SETTINGS'])
 
 application.register_blueprint(data_controller)
+application.register_blueprint(terra_controller)
 
 application.json_encoder = CustomJSONEncoder
 
