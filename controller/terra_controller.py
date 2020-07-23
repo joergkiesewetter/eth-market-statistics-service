@@ -82,3 +82,21 @@ def get_data_user():
 
     with open(file_path, 'r') as file:
         return jsonify(json.load(file))
+
+@terra_controller.route('/terra/rolling_retention', methods=['GET'])
+def get_data_rolling_retention():
+    try:
+        date_string = request.args.get('date')
+        date = datetime.strptime(date_string, '%Y-%m-%d')
+    except Exception:
+        traceback.print_exc()
+        abort(400, 'argument \'date\' is wrong, format: %Y-%m-%d')
+        return
+
+    file_path = os.path.join(current_app.config['TERRA_PATH_ROLLING_RETENTION'], date_string + '.json')
+
+    if not os.path.isfile(file_path):
+        abort(404, 'data not found')
+
+    with open(file_path, 'r') as file:
+        return jsonify(json.load(file))

@@ -20,6 +20,7 @@ class Config(object):
     TERRA_PATH_PAYMENTS = TERRA_BASE_PATH + 'payments'
     TERRA_PATH_TRANSACTIONS = TERRA_BASE_PATH + 'transactions'
     TERRA_PATH_USER = TERRA_BASE_PATH + 'user'
+    TERRA_PATH_ROLLING_RETENTION = TERRA_BASE_PATH + 'rolling_retention'
 
 class ProductionConfig(Config):
     DEVELOPMENT = False
