@@ -15,7 +15,7 @@ class Config(object):
     MARKET_PATH_TOP_TOKEN_HOLDER = MARKET_BASE_PATH + 'top_token_holder/'
     MARKET_PATH_TOP_TOKEN_HOLDER_NORMALIZED = MARKET_BASE_PATH + 'top_token_holder_normalized/'
 
-    TERRA_BASE_PATH = '/terra-data/final/'
+    TERRA_BASE_PATH = '/terra-data/v2/final/'
     TERRA_PATH_GENERAL = TERRA_BASE_PATH + 'general'
     TERRA_PATH_PAYMENTS = TERRA_BASE_PATH + 'payments'
     TERRA_PATH_TRANSACTIONS = TERRA_BASE_PATH + 'transactions'
