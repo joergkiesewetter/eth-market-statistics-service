@@ -1,0 +1,20 @@
+[Unit]
+Description=market analysis service
+
+Wants=network.target
+After=syslog.target network-online.target
+
+[Service]
+Environment=APP_SETTINGS=config.ProductionConfig
+
+Type=simple
+User=ubuntu
+WorkingDirectory=/home/ubuntu/market-analysis-service
+ExecStart=/usr/local/bin/uwsgi --ini /home/ubuntu/market-analysis-service/service.ini
+
+Restart=on-failure
+RestartSec=10
+KillMode=process
+
+[Install]
+WantedBy=multi-user.target
